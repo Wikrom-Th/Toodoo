@@ -4,5 +4,6 @@
 </script>
 
 <template>
-  <!-- <Todos /> -->
+  <Todos />
+  <Timer />
 </template>
