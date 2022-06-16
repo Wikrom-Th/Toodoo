@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 let id = 0
 
-const msg = ref('Toodoo!')
+const msg = ref('Todo')
 const inputTodo = ref('')
 var todos = ref([
   {id: id++, text:"Test", done: false}
