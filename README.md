@@ -1,6 +1,6 @@
 # Toodoo
 
-Todo, but more~
+More than just a simple todo app
 
 Right now kind of working:
 - Todo list
