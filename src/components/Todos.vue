@@ -3,9 +3,8 @@ import { ref } from 'vue'
 
 let id = 0
 
-const msg = ref('Todo')
 const inputTodo = ref('')
-var todos = ref([
+const todos = ref([
   {id: id++, text:"Test", done: false}
 ])
 
@@ -20,7 +19,6 @@ function removeDone() {
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
   <ul>
     <li v-for="todo in todos" :key="todo.id">
       <input type="checkbox" v-model="todo.done">

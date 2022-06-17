@@ -2,12 +2,16 @@
 import { ref } from 'vue'
 
 var intervalID: number | undefined
+
+const timerText = ref("25")
 const timer = ref(25)
 
 const running = ref(false)
 const invalidTime = ref(false)
 
 function onInput(e) {
+  timerText.value = e.target.value
+
   if(running.value) {
   return
   }
@@ -18,8 +22,7 @@ function onInput(e) {
   } 
   
   invalidTime.value = false
-  timer.value = e.target.value
-  e.target.value = ""
+  timer.value = timerText.value as unknown as number
 }
 
 function countdown() {
@@ -45,9 +48,8 @@ function startTimer() {
 
 <template>
   <div>
-    <h1>Timer</h1>
     Time: 
-    <input :value="timer" @input="onInput">
+    <input :value="timerText" @input="onInput">
   </div>
   <div>
     <button @click="startTimer">Start</button>
