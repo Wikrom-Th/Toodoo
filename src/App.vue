@@ -16,7 +16,7 @@
   <nav>
     <input type="radio" id="todos" value="todos" name="menu" v-model="currentMenu">
     <label for="todos">Todos</label>
-  
+
     <input type="radio" id="timer" value="timer" name="menu" v-model="currentMenu">
     <label for="timer">Timer</label>
   </nav>
@@ -36,6 +36,9 @@
 </template>
 
 <style>
+input[type="radio"] {
+  visibility:hidden;
+}
 
 nav, .main-component {
   padding-top: 3em;

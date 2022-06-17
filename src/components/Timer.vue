@@ -61,6 +61,6 @@ function startTimer() {
 
 <style>
 .error {
-    color: red;
+  color: red;
 }
 </style>
