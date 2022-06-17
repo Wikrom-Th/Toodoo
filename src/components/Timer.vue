@@ -7,7 +7,7 @@ const timerText = ref("25")
 const timer = ref(25)
 
 const running = ref(false)
-const invalidTime = ref(false)
+const invalidTime = ref(false) //invalid value input for time (aka NaN)
 
 function onInput(e) {
   timerText.value = e.target.value
@@ -42,18 +42,20 @@ function countdown() {
 }
 
 function startTimer() {
+  //preventing many calls to the function
+  if(running.value) {
+    return
+  }
   intervalID = setInterval(countdown, 1000)
 }
 </script>
 
 <template>
-  <div>
+  <form @submit.prevent="startTimer">
     Time: 
     <input :value="timerText" @input="onInput">
-  </div>
-  <div>
-    <button @click="startTimer">Start</button>
-  </div>
+    <button>Start</button>
+  </form>
   <h2 :class="{ error: invalidTime } ">{{ invalidTime ? 'Warning: time must be a number' : timer }}</h2>
 </template>
 
