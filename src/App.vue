@@ -4,6 +4,22 @@
 </script>
 
 <template>
-  <Todos />
-  <Timer />
+  <h1>Toodoo</h1>
+  <em>More than just a simple todo app</em>
+
+  <div class="component">
+    <h3>Todos</h3>
+    <Todos />
+  </div>
+
+  <div class="component">
+    <h3>Timer</h3>
+    <Timer />
+  </div>
 </template>
+
+<style>
+.component {
+  padding-top: 3em;
+}
+</style>
